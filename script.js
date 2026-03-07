@@ -18,8 +18,8 @@ document.getElementById("login-btn").addEventListener("click", function () {
     //3-1 true:::>> alert> homepage
     alert("Sign in Successfully");
 
-    // window.location.replace("/app_files/index.html");
-    window.location.assign("/app_files/index.html");
+    // window.location.replace("/./index_app.html");
+    window.location.assign("./index_app.html");
   } else {
     
     //3-2 false:::>> alert> return
