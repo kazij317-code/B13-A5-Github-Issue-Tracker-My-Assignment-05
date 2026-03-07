@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Tailwind and daisyUI  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.0/dist/full.min.css" rel="stylesheet" />
+
+    <!-- font Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+    <div class="card w-96 bg-base-100 shadow-xl p-6">
+        <div class="w-[100px] mx-auto">
+            <img src="./assets/github-logo.png" alt="">
+        </div>
+        <div class="text-center">
+            <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+            <p class="text-gray-500">Manage project issues easily</p>
+        </div>
+
+        <div class="mt-6 space-y-4">
+            <div>
+                <label class="label text-neutral font-bold">Username</label>
+                <input id="username" type="text" placeholder="Enter Username" class="input input-bordered w-full">
+                <p>Default:admin</p>
+            </div>
+
+            <div>
+                <label class="label text-neutral font-bold">Password</label>
+                <input id="password" type="password" placeholder="Enter Password" class="input input-bordered w-full">
+                <p>Default:admin123</p>
+            </div>
+
+            <button onclick="login()" id="login-btn" class="btn btn-primary w-full">
+                Sign In
+            </button>
+
+            <div class="divider">OR</div>
+
+            <p class="text-sm text-center">Demo Credentials:</p>
+
+            <div class="bg-[#F8FAFC] rounded-xl">
+                <p class="text-sm text-center text-gray-500">
+                    <span>Username:</span>admin
+                </p>
+
+                <p class="text-sm text-center text-gray-500">
+                    <span>Password:</span>admin123
+                </p>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
