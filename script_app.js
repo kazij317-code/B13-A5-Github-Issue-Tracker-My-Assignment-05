@@ -1,29 +1,36 @@
 // Active button Color change:
+
 const filterButtons = document.querySelectorAll(".button");
 
 filterButtons.forEach(button => {
     button.addEventListener("click", function () {
+
         filterButtons.forEach(btn => {
             btn.classList.remove("btn-primary");
         });
+
         this.classList.add("btn-primary");
 
     });
 });
 
-
 // Count Issues:
+
 function countIssues(issues){
 
-    const total = issues.length;   
+    const total = issues.length;
+
     const open = issues.filter(issue => issue.status === "open").length;
+
     const closed = issues.filter(issue => issue.status === "closed").length;
 
     document.getElementById("tabCount").innerText = total;
     document.getElementById("openCount").innerText = open;
     document.getElementById("closedCount").innerText = closed;
+     
+    
 }
-// ---------------------------------------------------------------------------------------
+
 
 // Load All Issues:
 
@@ -67,9 +74,7 @@ const createElements = (arr) =>{
     const htmlElements = arr.map((el) => `<span class="badge badge-outline font-medium text-[10px] bg-[#D97706]">${el}</span>`);
     return htmlElements.join(" "); 
 };
-// ------------------------
-//  <div class="">${createElements(issue.labels)}</div>
-// -------------------
+
 
 // Display Cards
 
@@ -90,6 +95,7 @@ const card = document.createElement("div")
 card.className = `card bg-white shadow border-t-4 ${borderColor}`
 
 
+
 card.innerHTML = `
 
 <div class="card-body">
@@ -106,10 +112,8 @@ card.innerHTML = `
             <p id="description" class="text-[#64748B] text-[12px]">${issue.description}</p>
 
             <div class="">
-
                 <div class="flex items-center gap-1">${createElements(issue.labels)}</div>
 
-                
             </div>
             <div class="divider"></div>
 
@@ -124,7 +128,8 @@ container.appendChild(card)
 })
 
 }
-// ----------------------------------------------------------------------------------------------------------
+
+//---------------------
 // Modal Details
 
 async function showDetails(id){
@@ -178,6 +183,10 @@ detailsModal.innerHTML = `
             </div>
 
 `;
+
+document.getElementById("issueModal").showModal()
+spinner.classList.add("hidden")
+
 
 }
 
