@@ -125,3 +125,58 @@ container.appendChild(card)
 
 }
 // ----------------------------------------------------------------------------------------------------------
+// Modal Details
+
+async function showDetails(id){
+
+spinner.classList.remove("hidden")
+const res = await fetch(
+`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
+
+const data = await res.json()
+
+const issue = data.data
+console.log(issue);
+
+// --------------------------------------------------
+// document.getElementById("modalTitle").textContent = issue.title
+// document.getElementById("modalStatus").textContent = issue.status
+// document.getElementById("modalAuthor").textContent = issue.author
+// document.getElementById("modalCreatedAt").textContent = issue.createdAt
+// document.getElementById("modalAssignee").textContent = issue.assignee
+// document.getElementById("modalLabels").textContent = issue.labels
+// document.getElementById("modalDescription").textContent = issue.description
+// document.getElementById("modalPriority").textContent = issue.priority
+// document.getElementById("issueModal").showModal()
+// ------------------------------------------------------------
+// spinner.classList.add("hidden")
+
+const detailsModal = document.getElementById("details-modal")
+detailsModal.innerHTML = `
+<h2 id="modalTitle" class="font-bold text-[24px]">${issue.title}</h2>
+
+            <div class="flex items-center gap-2">
+                <span id="modalStatus"
+                    class="badge badge-outline text-white text-[green] font-medium text-[10px]">${issue.status}</span>
+
+                <p class="text-[#64748B] text-[12px]">.&nbsp Opened by &nbsp<span id="modalAuthor">${issue.author}</span>
+                </p>
+                <p class="text-[#64748B] text-[12px]">.&nbsp<span id="modalCreatedAt">${issue.createdAt}</span></p>
+            </div>
+
+            <div id="modalLabels" class="flex items-center gap-2 py-3 badge font-medium text-[10px]">
+
+                <div class="flex items-center gap-1">${createElements(issue.labels)}</div>
+            </div>
+
+            <p id="modalDescription" class="text-[#64748B]">${issue.description}</p>
+            <div class="flex items-center gap-[150px] bg-gray-100 p-2 rounded-xl">
+                <p>Assignee:<br><span id="modalAssignee" class="font-semibold">${issue.assignee ? issue.assignee : "Unassigned"}</span></p>
+
+                <p>Priority:<br><span class="badge badge-outline text-[#EF4444] font-medium text-[10px]"
+                        id="modalPriority">${issue.priority}</span></p>
+            </div>
+
+`;
+
+}
