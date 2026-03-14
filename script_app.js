@@ -193,17 +193,47 @@ spinner.classList.add("hidden")
 
 // Search
 
+// async function searchIssue(){
+
+// const text = document.getElementById("searchInput").value
+
+// spinner.classList.remove("hidden")
+
+// const res = await fetch(
+// `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+// )
+
+// const data = await res.json()
+
+// displayIssues(data.data)
+
+// text = "";
+// spinner.classList.add("hidden")
+
+
+// }
+
+// ----------------------------------------------
 async function searchIssue(){
 
-const text = document.getElementById("searchInput").value
-spinner.classList.remove("hidden")
+const input = document.getElementById("searchInput");
+const text = input.value;
+
+spinner.classList.remove("hidden");
+
 const res = await fetch(
 `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
-)
+);
 
-const data = await res.json()
+const data = await res.json();
 
-displayIssues(data.data)
-spinner.classList.add("hidden")
+displayIssues(data.data);
+
+// input empty after search
+input.value = "";
+
+spinner.classList.add("hidden");
 
 }
+
+// ---------------------------------------------
