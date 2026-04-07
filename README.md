@@ -1,3 +1,44 @@
+📚 GitHub Issue Tracker
+
+GitHub Issue Tracker is a simple web application to create, manage, and track project issues efficiently in an organized way. It helps users monitor tasks and bugs easily through a clean interface.
+
+📸 Screenshot
+
+![GitHub Issue Tracker Screenshot](./assets/Github%20Issue%20Tracker.png)
+
+
+⚙️ Tech Stack
+
+HTML5, CSS3, JavaScript (DOM Manipulation), and Responsive Design.
+
+✨ Main Features
+📂 Create and manage project issues
+🔍 Track issue status بسهولة (easy tracking)
+📱 Fully responsive for mobile and desktop
+⚡ Fast and interactive UI
+🎨 Clean and user-friendly design
+
+
+📦 Dependencies
+
+No external libraries (Vanilla JavaScript project)
+
+🚀 Run Locally
+
+Follow these steps to run the project on your local machine:
+
+1️⃣ Clone the repository
+git clone https://github.com/kazij317-code/B13-A5-Github-Issue-Tracker-My-Assignment-05.git
+2️⃣ Go to project folder
+cd B13-A5-Github-Issue-Tracker-My-Assignment-05
+3️⃣ Open in browser
+Open index.html file in your browser
+
+
+🔗 Relevant Links
+🌐 Live Site: https://kazij317-code.github.io/B13-A5-Github-Issue-Tracker-My-Assignment-05/
+💻 GitHub Repo: https://github.com/kazij317-code/B13-A5-Github-Issue-Tracker-My-Assignment-05
+----------------------------------------------------------------------
 1️⃣ What is the difference between var, let, and const?
 
 Ans: Difference betewen var, let and const:
